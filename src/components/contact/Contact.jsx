@@ -1,45 +1,60 @@
 import React from 'react'
-import "./contact.css"
-import ME from '../../assets/me-about.jpg'
-import {FaAward} from 'react-icons/fa'
-import {FiUsers} from 'react-icons/fi'
-import {VscFolderLibrary} from 'react-icons/vsc'
+import './contact.css'
+import {MdOutlineEmail} from 'react-icons/md'
+import {RiMessengerLine} from 'react-icons/ri'
+import {BsWhatsapp} from 'react-icons/bs'
+// import {useRef} from 'react'
+// import emailjs from 'emailjs-com'
 const Contact = () => {
-  return (
- <section id='contact'>
-   <h5>Get To Know</h5>
-   <h2>About Me</h2>
+//   const from = useRef();
 
-   <div className="container about_container">
-    <div className="about_me">
-      <div className="about_me-image">
-        <img src={ME} alt="About Image" />
-      </div>
-    </div>
-    <div className="about_content">
-      <div className="about_cards">
-        <article className="about_card">
-          <FaAward className='about_icon'/>
-          <h5>Experience</h5>
-          <small>3+ Months Working</small>
-        </article>
-        <article className="about_card">
-          <FiUsers className='about_icon'/>
-          <h5>Clients</h5>
-          <small>3+ Worldwide</small>
-        </article>
-        <article className="about_card">
-          <VscFolderLibrary className='about_icon'/>
-          <h5>Projects</h5>
-          <small>30+ Completed</small>
-        </article>
-      </div>
-      <p>A learner who is looking forward to work in IT world, Enthusiastic to learn new Technology and gain industry experience, with at most dedication for the organizational and personal growth.
-     </p>
-     <a href="#contact" className='btn btn-primary'>Lets Talk</a>
-    </div>
-   </div>
- </section>
+//   const sendEmail = (e) => {
+//     e.preventDefault();
+
+//     emailjs.sendForm('service_or4n1x5', 'template_wnhiwhk', form.current, 'YOUR_PUBLIC_KEY')
+//       .then((result) => {
+//           console.log(result.text);
+//       }, (error) => {
+//           console.log(error.text);
+//       });
+//   };
+
+  return (
+    <section id='contact'>
+       <h5>Get In Touch</h5>
+       <h2>Contact Me</h2>
+
+       <div className="container contact_container">
+            <div className="contact_options">
+                <article className="contact_option">
+                       <MdOutlineEmail className='contact_option-icon'/>
+                      <h4>Email</h4>
+                      <h5>sanojsanoj638@gmail.com</h5>
+                      <a href="mailto:sanojsanoj638@gmail.com" target='_blank'>Send a message</a>
+                </article>
+                <article className="contact_option">
+                       <RiMessengerLine className='contact_option-icon'/>
+                      <h4>Messenger</h4>
+                      <h5>sanojsanoj638</h5>
+                      <a href="https://m.me/100015636063505" target='_blank'>Send a message</a>
+                </article>
+                <article className="contact_option">
+                       <BsWhatsapp className='contact_option-icon'/>
+                      <h4>WhatsApp</h4>
+                      <h5>+919973595208</h5>
+                      <a href="https://api.whatsapp.com/send?phone=9973595208" target="_blank">Send a message</a>
+                </article>
+            </div>
+            {/* END OF CONTACT OPTIONS */}
+            {/* ref={form} onSubmit={sendEmail} */}
+            <form>
+              <input type="text" name='name' placeholder='Your Full Name' required />
+              <input type="email" name='email' placeholder='Your Email'/>
+              <textarea name="message" rows="7" placeholder='Your Message' required></textarea>
+              <button type='submit' className='btn btn-primary'>Send Message</button>
+            </form>
+       </div>
+    </section>
   )
 }
 
